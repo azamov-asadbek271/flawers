@@ -14,3 +14,5 @@ export function getFormData (form:any) {
  return obj
  
 }
+
+export const BASE_URl = "https://json-api.uz/api/project/flawers"

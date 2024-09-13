@@ -1,12 +1,12 @@
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { Label } from "../components/ui/label";
-import { getFormData } from "../lib/utils";
 import { login } from "../request";
 import { UpdateIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import { toast } from "sonner";
 import { useAppStore } from "../lib/suzand";
+import { getFormData } from "../lib/my-utils";
 
 function Login() {
   const [loading, setLoading] = useState();
@@ -20,7 +20,7 @@ function Login() {
         setAdmin(res);
         toast.success("login bo'ldingiz");
       })
-      .catch((message) => toast.error(message))
+      .catch(({message}) => toast.error(message))
       .finally(() => setLoading(false));
   }
   return (

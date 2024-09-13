@@ -64,9 +64,21 @@
     @apply flex h-full flex-col;
   }
   #root {
-    @apply flex h-full flex-col ;
+    @apply flex h-full flex-col;
   }
   main {
     @apply grow;
+  }
+   .base-container {
+    @apply container mx-auto px-10;
+  }
+  .h1 {
+    @apply text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+  .h2 {
+    @apply border-b pb-2 text-3xl font-semibold tracking-tight;
+  }
+  .h3 {
+    @apply text-2xl font-semibold tracking-tight;
   }
 }

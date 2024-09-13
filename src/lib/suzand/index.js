@@ -1,7 +1,13 @@
 import { create } from "zustand";
 
-const useAppStore = create((set) => ({
-  admin: null,
-  setAdmin: (admin) => set((state) => ({ admin: admin })),
-
-}));
+ export const useAppStore = create((set) => ({
+   admin:  JSON.parse(localStorage.getItem("admin")) || null,
+   flowers: null,
+   setAdmin: (admin) => set(() => {
+         if(admin) {
+          localStorage.setItem("admin",JSON.stringify(admin))
+         }else localStorage.removeItem("admin")
+         return{admin}
+   }),
+   setFlowers: (flowers) => set(() => ({ flowers })),
+ }));

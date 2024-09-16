@@ -81,7 +81,9 @@ export default function UploadImg() {
             <Input
               ref={urlInput}
               type="url"
-              defaultValue={value && value !== "/public/vite.svg" ? value : ""}
+              defaultValue={
+                value && value !== "/assets/vite-4a748afd.svg" ? value : ""
+              }
               id="url"
               placeholder=" havolani kiriting..."
             />
@@ -94,7 +96,11 @@ export default function UploadImg() {
           </div>
         </TabsContent>
         <TabsContent value="default">
-          <Button onClick={() => setValue(DefaultImg)} className="w-full" variant="secondary">
+          <Button
+            onClick={() => setValue(DefaultImg)}
+            className="w-full"
+            variant="secondary"
+          >
             Default rasm qo'yish <PlusIcon className="ml-2" />
           </Button>
         </TabsContent>

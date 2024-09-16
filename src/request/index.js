@@ -38,3 +38,13 @@ export async function getFlowers(token) {
   if (res.status === 200 || res.status === 201) return await res.json();
   else throw new Error("xatolik");
 }
+export async function uploadImage (img) {
+  const formData = new FormData();
+  formData.append("file",img)
+  const res = await fetch(BASE_URl + "/upload", {
+    method: "POST",
+    body: formData,
+  });
+  if (res.status === 200 || res.status === 201) return res.text();
+  else throw new Error("xatolik");
+}

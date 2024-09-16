@@ -3,6 +3,7 @@ import { create } from "zustand";
  export const useAppStore = create((set) => ({
    admin:  JSON.parse(localStorage.getItem("admin")) || null,
    flowers: null,
+   addItemModal: true,
    setAdmin: (admin) => set(() => {
          if(admin) {
           localStorage.setItem("admin",JSON.stringify(admin))
@@ -10,4 +11,5 @@ import { create } from "zustand";
          return{admin}
    }),
    setFlowers: (flowers) => set(() => ({ flowers })),
+   setAddItemModal: () => set((state) => ({addItemModal: !state.addItemModal})),
  }));
